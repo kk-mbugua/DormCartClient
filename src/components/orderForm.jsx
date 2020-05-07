@@ -74,7 +74,7 @@ class OrderForm extends Component {
   }
 
   handleSubmit = () => {
-    const url = "/orders/new_order";
+    const url = "https://dorm-cart-server.herokuapp.com/orders/new_order";
     const body = this.get_form_data();
     Axios.post(url, body).then((res) => {
       if(res) {

@@ -29,7 +29,7 @@ class Search extends Component {
 
 
   handleOnClick = () => {
-    const url = `/orders/by_university/${this.state.input}`;
+    const url = `https://dorm-cart-server.herokuapp.com/orders/by_university/${this.state.input}`;
     Axios.get(url).then(res => {
       console.log(res)
       const data = res.data
