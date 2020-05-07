@@ -75,7 +75,7 @@ class OrderForm extends Component {
 
   handleSubmit = () => {
     const proxyurl = "https://cors-anywhere.herokuapp.com/"
-    const url = "https://dorm-cart-server.herokuapp.com/orders/all"
+    const url = "https://dorm-cart-server.herokuapp.com/orders/new_order"
     const body = this.get_form_data();
     Axios.post(proxyurl+url, body).then((res) => {
       if(res) {
