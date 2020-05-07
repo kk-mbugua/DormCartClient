@@ -31,7 +31,9 @@ class Orders extends Component {
   }
 
   get_all_orders(){
-    Axios.get("https://dorm-cart-server.herokuapp.com/orders/all").then(res=>{
+    const proxyurl = "https://cors-anywhere.herokuapp.com/"
+    const url = "https://dorm-cart-server.herokuapp.com/orders/all"
+    Axios.get(proxyurl+url).then(res=>{
       console.log(res)
       const data = res.data
       this.setState({orders: data})

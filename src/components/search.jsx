@@ -29,8 +29,9 @@ class Search extends Component {
 
 
   handleOnClick = () => {
+    const proxyurl = "https://cors-anywhere.herokuapp.com/"
     const url = `https://dorm-cart-server.herokuapp.com/orders/by_university/${this.state.input}`;
-    Axios.get(url).then(res => {
+    Axios.get(proxyurl+url).then(res => {
       console.log(res)
       const data = res.data
       this.setState({orders: data})

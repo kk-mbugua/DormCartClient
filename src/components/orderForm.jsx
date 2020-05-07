@@ -74,9 +74,10 @@ class OrderForm extends Component {
   }
 
   handleSubmit = () => {
-    const url = "https://dorm-cart-server.herokuapp.com/orders/new_order";
+    const proxyurl = "https://cors-anywhere.herokuapp.com/"
+    const url = "https://dorm-cart-server.herokuapp.com/orders/all"
     const body = this.get_form_data();
-    Axios.post(url, body).then((res) => {
+    Axios.post(proxyurl+url, body).then((res) => {
       if(res) {
         this.setState({submission_status: "Successfully Submited", hide_submission_status: false}, ()=> {setTimeout(()=>{this.setState({hide_submission_status: true})}, 5000)} )
       }
@@ -124,7 +125,7 @@ class OrderForm extends Component {
   };
 
   render() {
-    console.log(this.state.hide_submission_status)
+    
     return (
       <Grid container direction="column" alignItems="center">
         <Grid item xs={12}>
